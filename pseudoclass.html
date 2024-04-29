@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Manual CSS</title>
+</head>
+<body>
+    <header>MANUAL CSS</header>
+    <!-- Barra de navegación -->
+    <ul class="nav-bar">
+        <li class="nav-option"><a href="index.html">Home</a></li>
+        <li class="nav-option"><a href="display.html">Display</a></li>
+        <li class="nav-option"><a href="position.html">Position</a></li>
+        <li class="nav-option"><a href="zindex.html">Z-Index</a></li>
+        <li class="nav-option"><a href="overflow.html">Overflow</a></li>
+        <li class="nav-option dropdown"><a href="floatClear.html">Float and Clear</a>
+            <div class="dropdown-content">
+                <a href="floatClear.html">Float</a>
+                <a href="clear.html">Clear</a>
+                <a href="floatex.html">Float examples</a>
+              </div>
+            </li>
+        <li class="nav-option"><a href="inlineBlock.html">Display: Inline-block</a></li>
+        <li class="nav-option dropdown selected"><a href="combinators.html">Others</a>
+            <div class="dropdown-content">
+                <a href="combinators.html">Combinators</a>
+                <a class="selected" href="pseudoclass.html">Pseudo-classes</a>
+                <a href="elements.html">Pseudo-elements</a>
+              </div>
+            </li>
+    </ul>
+
+<div class="content">
+
+    <header>Pseudoclases CSS</header>
+
+    <hr>
+    
+    <div class="desc">
+    <h2>¿Qué son las pseudoclases?</h2>
+    <p>Se utiliza una pseudoclase para definir un estado especial de un elemento.</p>
+    <p>Por ejemplo, se puede utilizar para:</p>
+    <ul>
+        <li>Aplicar estilo a un elemento cuando un usuario pasa el mouse sobre él</li>
+        <li>Diseñe los enlaces visitados y no visitados de manera diferente</li>
+        <li>Aplicar estilo a un elemento cuando recibe el foco</li>
+    </ul>
+    </div>
+
+    <div class="inpex">
+    <button class="btnex">Pasa el ratón por encima de mí</button>
+    <input type="text" name="" id="txtex" placeholder="Haz clic en mí para enfocarte">
+    </div>
+    
+    <hr>
+
+    <h2>Sintaxis</h2>
+    <p>La sintaxis de pseudoclases:</p>
+
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="code-ex">
+        <code>
+            selector:pseudo-class { <br>
+                property: value; <br>
+              }
+        </code>
+    </div>
+    </div>
+
+    <hr>
+
+    <h2>Pseudoclases de anclaje</h2>
+
+    <p>Los enlaces se pueden mostrar de diferentes maneras:</p>
+
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="code-ex">
+        <code>
+            /* unvisited link */ <br>
+            a:link { <br>
+            color: #FF0000; <br>
+            } <br>
+            <br>
+            /* visited link */ <br>
+            a:visited { <br>
+            color: #00FF00; <br>
+            } <br>
+            <br>
+            /* mouse over link */ <br>
+            a:hover { <br>
+            color: #FF00FF; <br>
+            } <br>
+            <br>
+            /* selected link */ <br>
+            a:active { <br>
+            color: #0000FF; <br>
+            }
+        </code>
+    </div>
+    </div>
+    
+    <div class="note"><span style="font-weight: bold;">Nota:</span> <span class="imp">a:hover</span> ¡DEBE aparecer después <span class="imp">a:link</span> y <span class="imp">a:visited</span> en la definición de CSS para que sea efectivo! <span class="imp">a:active</span> ¡DEBE aparecer después <span class="imp">a:hover</span> en la definición de CSS para que sea efectivo! Los nombres de pseudoclases no distinguen entre mayúsculas y minúsculas.</div>
+
+    <hr>
+
+    <h2>Pseudoclases y clases HTML</h2>
+
+    <p>Las pseudoclases se pueden combinar con clases HTML:</p>
+    <p>Cuando pasas el cursor sobre el enlace en el ejemplo, cambiará de color:</p>
+    
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="code-ex">
+        <code>
+            a.highlight:hover { <br>
+                color: #ff0000; <br>
+              }
+        </code>
+    </div>
+    </div>
+
+    <hr>
+
+    <h2>Coloca el cursor sobre &lt;div&gt;</h2>
+
+    <p>Un ejemplo del uso de la pseudoclase <span class="imp">:hover</span> en un elemento &lt;div&gt;:</p>
+
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="code-ex">
+        <code>
+            div:hover { <br>
+                background-color: blue; <br>
+              }
+        </code>
+    </div>
+    </div>
+
+    <hr>
+
+    <h2>Desplazamiento simple de información sobre herramientas</h2>
+
+    <p>Pase el cursor sobre un elemento &lt;div&gt; para mostrar un elemento &lt;p&gt; (como una información sobre herramientas):</p>
+    <div class="div-hover" style="font-weight: bold; color: red; margin-bottom: 10px;">Pase el cursor sobre mí para mostrar el elemento &lt;p&gt;.
+    <p class="p-hover">¡Tada! ¡Aquí estoy!</p>
+    </div>
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="code-ex">
+        <code>
+            p { <br>
+                display: none; <br>
+                background-color: yellow; <br>
+                padding: 20px; <br>
+              } <br>
+              <br>
+              div:hover p { <br>
+                display: block; <br>
+              }
+        </code>
+    </div>
+    </div>
+
+    <hr>
+
+    <h2>CSS: la pseudoclase del primer hijo</h2>
+
+    <p>La pseudoclase <span class="imp">:first-child</span> coincide con un elemento específico que es el primer hijo de otro elemento.</p>
+    
+    <h2>Coincide con el primer elemento &lt;p&gt;</h2>
+    <p>En el siguiente ejemplo, el selector coincide con cualquier elemento &lt;p&gt; que sea el primer hijo de cualquier elemento:</p>
+    
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="code-ex">
+        <code>
+            p:first-child { <br>
+                color: blue; <br>
+              }
+        </code>
+    </div>
+    </div>
+
+    <hr>
+
+    <h2>Haga coincidir el primer elemento &lt;i&gt; en todos los elementos &lt;p&gt;</h2>
+
+    <p>En el siguiente ejemplo, el selector coincide con el primer elemento &lt;i&gt; de todos los elementos &lt;p&gt;:</p>
+        
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="code-ex">
+        <code>
+            p i:first-child { <br>
+                color: blue; <br>
+              }
+        </code>
+    </div>
+    </div>
+
+    <hr>
+
+    <h2>Haga coincidir todos los elementos &lt;i&gt; en todos los primeros elementos secundarios &lt;p&gt;</h2>
+
+    <p>En el siguiente ejemplo, el selector coincide con todos los elementos &lt;i&gt; en los elementos &lt;p&gt; que son el primer hijo de otro elemento:</p>
+        
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="code-ex">
+        <code>
+            p:first-child i { <br>
+                color: blue; <br>
+              }
+        </code>
+    </div>
+    </div>
+
+    <hr>
+
+    <h2>CSS: la pseudoclase :lang</h2>
+
+    <p>La :langpseudoclase le permite definir reglas especiales para diferentes idiomas.</p>
+    <p>En el siguiente ejemplo, :langdefine las comillas para los elementos <q> con lang="no":</p>
+        
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="code-ex">
+        <code>
+            &lt;html&gt; <br>
+            &lt;head&gt; <br>
+            &lt;style&gt; <br>
+            q:lang(no) { <br>
+            quotes: "~" "~"; <br>
+            } <br>
+            &lt;/style&gt; <br>
+            &lt;/head&gt; <br> 
+            &lt;body&gt; <br>
+            <br>
+            &lt;p&gt;Some text &lt;q lang="no"&gt;A quote in a paragraph&lt;/q&gt; Some text.&lt;/p&gt; <br>
+            <br>
+            &lt;/body&gt; <br>
+            &lt;/html&gt; 
+        </code>
+    </div>
+    </div>
+
+    <div class="desc">
+        <h2>Todas las pseudoclases de CSS</h2>
+    <table>
+        <tr class="columnas">
+            <th>Propiedad</th>
+            <th>Ejemplo</th>
+            <th>Descripción</th>
+        </tr>
+        <tr class="tr-gray">
+            <td class="fst">:active</td>
+            <td>a:active</td>
+            <td>Selecciona el enlace activo.</td>
+        </tr>
+        <tr>
+            <td>:checked</td>
+            <td>input:checked</td>
+            <td>Selecciona cada elemento &lt;input&gt; que está marcado (checked).</td>
+        </tr>
+        <tr class="tr-gray">
+            <td>:disabled</td>
+            <td>input:disabled</td>
+            <td>Selecciona cada elemento &lt;input&gt; que está deshabilitado (disabled).</td>
+        </tr>
+        <tr>
+            <td>:empty</td>
+            <td>p:empty</td>
+            <td>Selecciona cada elemento &lt;p&gt; que no tiene hijos</td>
+        </tr>
+        <tr class="tr-gray">
+            <td>:enabled</td>
+            <td>input:enabled</td>
+            <td>Selecciona cada elemento &lt;input&gt; que está habilitado (enabled).</td>
+        </tr>
+        <tr>
+            <td>:first-child</td>
+            <td>p:first-child</td>
+            <td>Selecciona cada elemento &lt;p&gt; que es el primer hijo de su padre.</td>
+        </tr>
+        <tr class="tr-gray">
+            <td>:first-of-type</td>
+            <td>p:first-of-type</td>
+            <td>Selecciona cada elemento &lt;p&gt; que es el primer &lt;p&gt; de su tipo dentro de su padre.</td>
+        </tr>
+        <tr>
+            <td>:focus</td>
+            <td>input:focus</td>
+            <td>Selecciona el elemento &lt;input&gt; que tiene el foco.</td>
+        </tr>
+        <tr class="tr-gray">
+            <td>:hover</td>
+            <td>a:hover</td>
+            <td>Selecciona los enlaces que tienen el cursor encima.</td>
+        </tr>
+        <tr>
+            <td>:in-range</td>
+            <td>input:in-range</td>
+            <td>Selecciona elementos &lt;input&gt; con un valor dentro de un rango específico.</td>
+        </tr>
+        <tr class="tr-gray">
+            <td>:invalid</td>
+            <td>input:invalid</td>
+            <td>Selecciona todos los elementos &lt;input&gt; con un valor inválido.</td>
+        </tr>
+        <tr>
+            <td>:lang(language)</td>
+            <td>p:lang(it)</td>
+            <td>Selecciona cada elemento &lt;p&gt; con un atributo lang que comienza con "it".</td>
+        </tr>
+        <tr class="tr-gray">
+            <td class="fst">:last-child</td>
+            <td>p:last-child</td>
+            <td>Selecciona cada elemento &lt;p&gt; que es el último hijo de su padre.</td>
+        </tr>
+        <tr>
+            <td>:last-of-type</td>
+            <td>p:last-of-type</td>
+            <td>Selecciona cada elemento &lt;p&gt; que es el último &lt;p&gt; de su tipo dentro de su padre.</td>
+        </tr>
+        <tr class="tr-gray">
+            <td>:link</td>
+            <td>a:link</td>
+            <td>Selecciona todos los enlaces no visitados.</td>
+        </tr>
+        <tr>
+            <td>:not(selector)</td>
+            <td>:not(p)</td>
+            <td>Selecciona cada elemento que no es del tipo &lt;p&gt;.</td>
+        </tr>
+        <tr class="tr-gray">
+            <td>:nth-child(n)</td>
+            <td>p:nth-child(2)</td>
+            <td>Selecciona cada elemento &lt;p&gt; que es el segundo hijo de su padre.</td>
+        </tr>
+        <tr>
+            <td>:nth-last-child(n)</td>
+            <td>p:nth-last-child(2)</td>
+            <td>Selecciona cada elemento &lt;p&gt; que es el segundo hijo de su padre, contando desde el último hijo.</td>
+        </tr>
+        <tr class="tr-gray">
+            <td>:nth-last-of-type(n)</td>
+            <td>p:nth-last-of-type(2)</td>
+            <td>Selecciona cada elemento &lt;p&gt; que es el segundo &lt;p&gt; de su tipo dentro de su padre, contando desde el último hijo.</td>
+        </tr>
+        <tr>
+            <td>:nth-of-type(n)</td>
+            <td>p:nth-of-type(2)</td>
+            <td>Selecciona cada elemento &lt;p&gt; que es el segundo &lt;p&gt; de su tipo dentro de su padre.</td>
+        </tr>
+        <tr class="tr-gray">
+            <td>:only-of-type</td>
+            <td>p:only-of-type</td>
+            <td>Selecciona cada elemento &lt;p&gt; que es el único &lt;p&gt; de su tipo dentro de su padre.</td>
+        </tr>
+        <tr>
+            <td>:only-child</td>
+            <td>p:only-child</td>
+            <td>Selecciona cada elemento &lt;p&gt; que es el único hijo de su padre.</td>
+        </tr>
+        <tr class="tr-gray">
+            <td>:optional</td>
+            <td>input:optional</td>
+            <td>Selecciona elementos &lt;input&gt; que no tienen el atributo "required".</td>
+        </tr>
+        <tr>
+            <td>:out-of-range</td>
+            <td>input:out-of-range</td>
+            <td>Selecciona elementos &lt;input&gt; con un valor fuera de un rango específico.</td>
+        </tr>
+        <tr class="tr-gray">
+            <td>:read-only</td>
+            <td>input:read-only</td>
+            <td>Selecciona elementos &lt;input&gt; con el atributo "readonly" especificado.</td>
+        </tr>
+        <tr>
+            <td>:read-write</td>
+            <td>input:read-write</td>
+            <td>Selecciona elementos &lt;input&gt; sin el atributo "readonly".</td>
+        </tr>
+        <tr class="tr-gray">
+            <td>:required</td>
+            <td>input:required</td>
+            <td>Selecciona elementos &lt;input&gt; con el atributo "required" especificado.</td>
+        </tr>
+        <tr>
+            <td>:root</td>
+            <td>root</td>
+            <td>Selecciona el elemento raíz del documento.</td>
+        </tr>
+        <tr class="tr-gray">
+            <td>:target</td>
+            <td>#news:target</td>
+            <td>Selecciona el elemento #news que está activo actualmente (haciendo clic en un URL que contiene ese nombre de anclaje).</td>
+        </tr>
+        <tr>
+            <td>:valid</td>
+            <td>input:valid</td>
+            <td>Selecciona todos los elementos &lt;input&gt; con un valor válido.</td>
+        </tr>
+        <tr class="tr-gray">
+            <td>:visited</td>
+            <td>a:visited</td>
+            <td>Selecciona todos los enlaces visitados.</td>
+        </tr>
+        </table>
+    </div>
+
+    <div class="btn-pasar">
+        <button class="back"><a href="inlineBlock.html">Anterior</a></button>
+        <button class="next"><a href="elements.html">Siguiente</a></button>
+    </div>
+
+    <hr style="clear: both;">
+    <footer>
+        <p>Edgar Álvaro Varela ©2024</p>
+    </footer>
+</div>
+</body>
+</html>

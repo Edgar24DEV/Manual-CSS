@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Manual CSS</title>
+</head>
+<body>
+    <header>MANUAL CSS</header>
+    <!-- Barra de navegación -->
+    <ul class="nav-bar">
+        <li class="nav-option"><a href="index.html">Home</a></li>
+        <li class="nav-option"><a href="display.html">Display</a></li>
+        <li class="nav-option"><a href="position.html">Position</a></li>
+        <li class="nav-option"><a href="zindex.html">Z-Index</a></li>
+        <li class="nav-option selected"><a href="overflow.html">Overflow</a></li>
+        <li class="nav-option dropdown"><a href="floatClear.html">Float and Clear</a>
+            <div class="dropdown-content">
+                <a href="floatClear.html">Float</a>
+                <a href="clear.html">Clear</a>
+                <a href="floatex.html">Float examples</a>
+              </div>
+            </li>
+        <li class="nav-option"><a href="inlineBlock.html">Display: Inline-block</a></li>
+        <li class="nav-option dropdown"><a href="combinators.html">Others</a>
+            <div class="dropdown-content">
+                <a href="combinators.html">Combinators</a>
+                <a href="pseudoclass.html">Pseudo-classes</a>
+                <a href="elements.html">Pseudo-elements</a>
+              </div>
+            </li>
+    </ul>
+
+<div class="content">
+
+    <header>Diseño CSS : desbordamiento</header>
+
+    <hr>
+
+    <p>La propiedad CSS <span class="imp">overflow</span> controla lo que sucede con el contenido que es demasiado grande para caber en un área.</p>
+
+    <div id="overflowTest">This text is really long and the height of its container is only 100 pixels. Therefore, a scrollbar is added to help the reader to scroll the content. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.</div>
+
+    <hr>
+
+    <div class="desc">
+    <h2>Desbordamiento de CSS</h2>
+    <p>La propiedad <span class="imp">overflow</span> especifica si se recortará el contenido o se agregarán barras de desplazamiento cuando el contenido de un elemento sea demasiado grande para caber en el área especificada.</p>
+    <p>La propiedad <span class="imp">overflow</span> tiene los siguientes valores:</p>
+    <ul>
+        <li><span class="imp">visible</span>- Por defecto. El desbordamiento no se recorta. El contenido se muestra fuera del cuadro del elemento.</li>
+        <li><span class="imp">hidden</span>- El desbordamiento se recorta y el resto del contenido será invisible.</li>
+        <li><span class="imp">scroll</span>- Se recorta el desbordamiento y se agrega una barra de desplazamiento para ver el resto del contenido.</li>
+        <li><span class="imp">auto</span>- Similar a <span class="imp">scroll</span>, pero agrega barras de desplazamiento solo cuando es necesario</li>
+    </ul>
+    </div>
+
+    <div class="note">
+        <p><span style="font-weight: bold;">Nota: </span>La propiedad <span class="imp">overflow</span> solo funciona para elementos de bloque con una altura especificada.</p>
+        <p><span style="font-weight: bold;">Nota: </span>En OS X Lion (en Mac), las barras de desplazamiento están ocultas de forma predeterminada
+            y solo se muestran cuando se usan (aunque esté configurado "overflow:scroll").</p>
+    </div>
+
+    <hr>
+
+    <div class="desc">
+        <h2>desbordamiento: visible</h2>
+        <p>De forma predeterminada, el desbordamiento es <span class="imp">visible</span>, lo que significa que no se recorta y se representa fuera del cuadro del elemento:</p>
+        <p style="width: 200px; height: 65px; background-color: coral; overflow: visible; margin-bottom: 140px;">Puede utilizar la propiedad de desbordamiento cuando desee tener un mejor control del diseño. La propiedad de desbordamiento especifica qué sucede si el contenido desborda el cuadro de un elemento.</p>
+    </div>
+
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="code-ex">
+        <code>
+            div { <br>
+                width: 200px; <br>
+                height: 65px; <br>
+                background-color: coral; <br>
+                overflow: visible; <br>
+              } 
+        </code>
+    </div>
+    </div>
+
+    <hr>
+
+    <div class="desc">
+        <h2>desbordamiento: oculto</h2>
+        <p>Con el valor <span class="imp">hidden</span>, se recorta el desbordamiento y se oculta el resto del contenido:</p>
+        <p style="width: 200px; height: 65px; background-color: coral; overflow: hidden;">Puede utilizar la propiedad de desbordamiento cuando desee tener un mejor control del diseño. La propiedad de desbordamiento especifica qué sucede si el contenido desborda el cuadro de un elemento.</p>
+    </div>
+
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="code-ex">
+        <code>
+            div { <br>
+                width: 200px; <br>
+                height: 65px; <br>
+                background-color: coral; <br>
+                overflow: hidden; <br>
+              } 
+        </code>
+    </div>
+    </div>
+
+    <hr>
+
+    <div class="desc">
+        <h2>desbordamiento: scroll</h2>
+        <p>El autovalor es similar a <span class="imp">scroll</span>, pero agrega barras de desplazamiento solo cuando es necesario:</p>
+        <p style="width: 200px; height: 100px; background-color: coral; border: 1px solid black; overflow: scroll;">Puede utilizar la propiedad de desbordamiento cuando desee tener un mejor control del diseño. La propiedad de desbordamiento especifica qué sucede si el contenido desborda el cuadro de un elemento.</p>
+    </div>
+
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="code-ex">
+        <code>
+            div { <br>
+                width: 200px; <br>
+                height: 100px; <br>
+                background-color: coral; <br>
+                border: 1px solid black; <br>
+                overflow: scroll; <br>
+              } 
+        </code>
+    </div>
+    </div>
+
+    <hr>
+
+    <div class="desc">
+        <h2>desbordamiento: auto</h2>
+        <p>El valor <span class="imp">auto</span> es similar a <span class="imp">scroll</span>, pero agrega barras de desplazamiento solo cuando es necesario:</p>
+        <p style="width: 200px; height: 100px; background-color: coral; border: 1px solid black; overflow: auto;">Puede utilizar la propiedad de desbordamiento cuando desee tener un mejor control del diseño. La propiedad de desbordamiento especifica qué sucede si el contenido desborda el cuadro de un elemento.</p>
+    </div>
+
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="code-ex">
+        <code>
+            div { <br>
+                width: 200px; <br>
+                height: 100px; <br>
+                background-color: coral; <br>
+                border: 1px solid black; <br>
+                overflow: auto; <br>
+              } 
+        </code>
+    </div>
+    </div>
+
+    <hr>
+
+    <div class="desc">
+        <h2>desbordamiento-x y desbordamiento-y</h2>
+        <p>Las propiedades <span class="imp">overflow-x</span> y <span class="imp">overflow-y</span> especifican si se debe cambiar el desbordamiento del contenido solo horizontal o verticalmente (o ambos):</p>
+        <p><span class="imp">overflow-x</span> especifica qué hacer con los bordes izquierdo/derecho del contenido.</p>
+        <p><span class="imp">overflow-y</span> especifica qué hacer con los bordes superior/inferior del contenido.</p>
+        <p style="width: 200px; height: 100px; background-color: coral; border: 1px solid black; overflow-x: hidden; overflow-y: scroll;">Puede utilizar la propiedad de desbordamiento cuando desee tener un mejor control del diseño. La propiedad de desbordamiento especifica qué sucede si el contenido desborda el cuadro de un elemento.</p>
+    </div>
+
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="code-ex">
+        <code>
+            div { <br>
+                width: 200px; <br>
+                height: 65px; <br>
+                background-color: coral; <br>
+                border: 1px solid black; <br>
+                overflow-x: hidden; <br>
+                overflow-y: scroll; <br>
+              } 
+        </code>
+    </div>
+    </div>
+    
+    <div class="desc">
+        <h2>Todas las propiedades de desbordamiento de CSS</h2>
+    <table>
+        <tr class="columnas">
+            <th>Propiedad</th>
+            <th>Descripción</th>
+        </tr>
+        <tr class="tr-gray">
+            <td class="fst">overflow</td>
+            <td>Especifica qué sucede si el contenido desborda el cuadro de un elemento.</td>
+        </tr>
+        <tr>
+            <td>overflow-wrap</td>
+            <td>Especifica si el navegador puede o no dividir líneas con palabras largas, si desbordan su contenedor.</td>
+        </tr>
+        <tr class="tr-gray">
+            <td>overflow-x</td>
+            <td>Especifica qué hacer con los bordes izquierdo/derecho del contenido si desborda el área de contenido del elemento.</td>
+        </tr>
+        <tr>
+            <td>overflow-y</td>
+            <td>Especifica qué hacer con los bordes superior/inferior del contenido si desborda el área de contenido del elemento.</td>
+        </tr>
+        </table>
+    </div>
+
+    <div class="btn-pasar">
+        <button class="back"><a href="zindex.html">Anterior</a></button>
+        <button class="next"><a href="floatClear.html">Siguiente</a></button>
+    </div>
+
+    <hr style="clear: both;">
+    <footer>
+        <p>Edgar Álvaro Varela ©2024</p>
+    </footer>
+</div>
+</body>
+</html>

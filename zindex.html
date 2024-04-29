@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Manual CSS</title>
+</head>
+<body>
+    <header>MANUAL CSS</header>
+    <!-- Barra de navegación -->
+    <ul class="nav-bar">
+        <li class="nav-option"><a href="index.html">Home</a></li>
+        <li class="nav-option"><a href="display.html">Display</a></li>
+        <li class="nav-option"><a href="position.html">Position</a></li>
+        <li class="nav-option selected"><a href="zindex.html">Z-Index</a></li>
+        <li class="nav-option"><a href="overflow.html">Overflow</a></li>
+        <li class="nav-option dropdown"><a href="floatClear.html">Float and Clear</a>
+            <div class="dropdown-content">
+                <a href="floatClear.html">Float</a>
+                <a href="clear.html">Clear</a>
+                <a href="floatex.html">Float examples</a>
+              </div>
+            </li>
+        <li class="nav-option"><a href="inlineBlock.html">Display: Inline-block</a></li>
+        <li class="nav-option dropdown"><a href="combinators.html">Others</a>
+            <div class="dropdown-content">
+                <a href="combinators.html">Combinators</a>
+                <a href="pseudoclass.html">Pseudo-classes</a>
+                <a href="elements.html">Pseudo-elements</a>
+              </div>
+            </li>
+    </ul>
+
+<div class="content">
+
+    <header>Diseño CSS : la propiedad del índice z</header>
+
+    <hr>
+
+    <p>La propiedad <span class="imp">z-index</span> especifica el orden de pila de un elemento.</p>
+
+    <hr>
+
+    <div class="desc">
+    <h2>La propiedad del índice z</h2>
+    <p>Cuando se colocan elementos, pueden superponerse a otros elementos.</p>
+    <p>La propiedad <span class="imp">z-index</span> especifica el orden de pila de un elemento (qué elemento debe colocarse delante o detrás de los demás).</p>
+    <p>Un elemento puede tener un orden de pila positivo o negativo:</p>
+    </div>
+
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="code-ex">
+        <code>
+            img { <br>
+                position: absolute; <br>
+                left: 0px; <br>
+                top: 0px; <br>
+                z-index: -1; <br>
+              } <br>
+        </code>
+    </div>
+    </div>
+
+    <p><span style="font-weight: bold;">Nota:</span> <span class="imp">z-index</span> solo funciona en elementos posicionados
+        (posición: absoluta, posición: relativa, posición: fija o posición: pegajosa) y 
+        elementos flexibles (elementos que son hijos directos de visualización: elementos flexibles).</p>
+
+        <hr>
+
+    <h2>Otro ejemplo de índice Z</h2>
+
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <p>Aquí vemos que un elemento con mayor orden de pila siempre está encima de un elemento con menor orden de pila:</p>
+        <div class="code-ex">
+        <code>
+            &lt;html&gt;<br>
+                &lt;head&gt;<br>
+                &lt;style&gt;<br>
+                .container {<br>
+                position: relative;<br>
+                }<br>
+                <br>
+                .black-box {<br>
+                position: relative;<br>
+                z-index: 1;<br>
+                border: 2px solid black;<br>
+                height: 100px;<br>
+                margin: 30px;<br>
+                }<br>
+                <br>
+                .gray-box {<br>
+                position: absolute;<br>
+                z-index: 3;<br>
+                background: lightgray;<br>
+                height: 60px;<br>
+                width: 70%;<br>
+                left: 50px;<br>
+                top: 50px;<br>
+                }<br>
+                <br>
+                .green-box {<br>
+                position: absolute;<br>
+                z-index: 2;<br>
+                background: lightgreen;<br>
+                width: 35%;<br>
+                left: 270px;<br>
+                top: -15px;<br>
+                height: 100px;<br>
+                }<br>
+                &lt;/style&gt;<br>
+                &lt;/head&gt;<br>
+                &lt;body&gt;<br>
+                <br>
+                &lt;div class="container"&gt;<br>
+                &lt;div class="black-box"&gt;Black box&lt;/div&gt;<br>
+                &lt;div class="gray-box"&gt;Gray box&lt;/div&gt;<br>
+                &lt;div class="green-box"&gt;Green box&lt;/div&gt;<br>
+                &lt;/div&gt;<br>
+                <br>
+                &lt;/body&gt;<br>
+            &lt;/html&gt;
+
+
+        </code>
+    </div>
+    </div>
+
+    <hr>
+
+    <h2>Sin índice Z</h2>
+    <p>Si dos elementos posicionados se superponen sin <span class="imp">z-index</span> especificarlo, el último elemento definido en el código HTML se mostrará en la parte superior.</p>
+
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <p>El mismo ejemplo que el anterior, pero aquí sin ningún índice z especificado:</p>
+        <div class="code-ex">
+        <code>
+            &lt;html&gt;<br>
+                &lt;head&gt;<br>
+                &lt;style&gt;<br>
+                .container {<br>
+                position: relative;<br>
+                }<br>
+                <br>
+                .black-box {<br>
+                position: relative;<br>
+                z-index: 1;<br>
+                border: 2px solid black;<br>
+                height: 100px;<br>
+                margin: 30px;<br>
+                }<br>
+                <br>
+                .gray-box {<br>
+                position: absolute;<br>
+                background: lightgray;<br>
+                height: 60px;<br>
+                width: 70%;<br>
+                left: 50px;<br>
+                top: 50px;<br>
+                }<br>
+                <br>
+                .green-box {<br>
+                position: absolute;<br>
+                background: lightgreen;<br>
+                width: 35%;<br>
+                left: 270px;<br>
+                top: -15px;<br>
+                height: 100px;<br>
+                }<br>
+                &lt;/style&gt;<br>
+                &lt;/head&gt;<br>
+                &lt;body&gt;<br>
+                <br>
+                &lt;div class="container"&gt;<br>
+                &lt;div class="black-box"&gt;Black box&lt;/div&gt;<br>
+                &lt;div class="gray-box"&gt;Gray box&lt;/div&gt;<br>
+                &lt;div class="green-box"&gt;Green box&lt;/div&gt;<br>
+                &lt;/div&gt;<br>
+                <br>
+                &lt;/body&gt;<br>
+            &lt;/html&gt;
+
+
+        </code>
+    </div>
+    </div>
+
+    <div class="btn-pasar">
+        <button class="back"><a href="position.html">Anterior</a></button>
+        <button class="next"><a href="overflow.html">Siguiente</a></button>
+    </div>
+
+    <hr style="clear: both;">
+    <footer>
+        <p>Edgar Álvaro Varela ©2024</p>
+    </footer>
+</div>
+</body>
+</html>

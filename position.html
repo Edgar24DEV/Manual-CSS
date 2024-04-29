@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Manual CSS</title>
+</head>
+<body>
+    <header>MANUAL CSS</header>
+    <!-- Barra de navegación -->
+    <ul class="nav-bar">
+        <li class="nav-option"><a href="index.html">Home</a></li>
+        <li class="nav-option"><a href="display.html">Display</a></li>
+        <li class="nav-option selected"><a href="position.html">Position</a></li>
+        <li class="nav-option"><a href="zindex.html">Z-Index</a></li>
+        <li class="nav-option"><a href="overflow.html">Overflow</a></li>
+        <li class="nav-option dropdown"><a href="floatClear.html">Float and Clear</a>
+            <div class="dropdown-content">
+                <a href="floatClear.html">Float</a>
+                <a href="clear.html">Clear</a>
+                <a href="floatex.html">Float examples</a>
+              </div>
+            </li>
+        <li class="nav-option"><a href="inlineBlock.html">Display: Inline-block</a></li>
+        <li class="nav-option dropdown"><a href="combinators.html">Others</a>
+            <div class="dropdown-content">
+                <a href="combinators.html">Combinators</a>
+                <a href="pseudoclass.html">Pseudo-classes</a>
+                <a href="elements.html">Pseudo-elements</a>
+              </div>
+            </li>
+    </ul>
+
+<div class="content">
+
+    <header>Diseño CSS : la propiedad de posición</header>
+
+    <hr>
+
+    <p>La propiedad <span class="imp">position</span> especifica el tipo de método de posicionamiento utilizado para un elemento (estático, relativo, fijo, absoluto o fijo).</p>
+
+    <hr>
+
+    <div class="desc">
+    <h2>La propiedad Position</h2>
+    <p>La propiedad position especifica el tipo de método de posicionamiento utilizado para un elemento</p>
+    <p>Hay cinco valores de posición diferentes:</p>
+    <ul>
+        <li><span class="imp">static</span></li>
+        <li><span class="imp">relative</span></li>
+        <li><span class="imp">fixed</span></li>
+        <li><span class="imp">absolute</span></li>
+        <li><span class="imp">sticky</span></li>
+    </ul>
+    <p>Luego, los elementos se colocan utilizando las propiedades superior, inferior, izquierda y derecha. Sin embargo, estas propiedades no funcionarán a menos que position se establezcan primero. 
+        También funcionan de manera diferente según el valor de la posición.</p>
+    </div>
+
+    <hr>
+
+    <div class="desc">
+        <h2>position: static;</h2>
+        <p>Los elementos HTML se colocan estáticos de forma predeterminada.</p>
+        <p>Los elementos posicionados estáticamente no se ven afectados por las propiedades superior, inferior, izquierda y derecha.</p>
+        <p>Un elemento con <span class="imp">position: static;</span> no está colocado de ninguna manera especial; siempre se coloca de acuerdo con el flujo normal de la página:</p>
+        <p style="position: static; border: 3px solid #73AD21;">Este elemento &lt;div&gt; tiene posición: estática;</p>
+        <p>Aquí está el CSS que se utiliza:</p>
+    </div>
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="code-ex">
+        <code>
+            div.static { <br>
+                position: static; <br>
+                border: 3px solid #73AD21; <br>
+              } 
+        </code>
+    </div>
+    </div>
+
+    <hr>
+
+    <div class="desc">
+        <h2>position: fixed;</h2>
+        <p>Un elemento con <span class="imp">position: fixed;</span> se coloca en relación con la ventana gráfica, lo que significa que siempre permanece en el mismo lugar incluso si se desplaza la página. Las propiedades superior, derecha, inferior e izquierda se utilizan para posicionar el elemento.</p>
+        <p>Un elemento fijo no deja un espacio en la página donde normalmente se habría ubicado.</p>
+        <p>Observe el elemento fijo en la esquina inferior derecha de la página. Aquí está el CSS que se utiliza:</p>
+        <p style="position: fixed; bottom: 0; right: 0; border: 3px solid #73AD21;">Este elemento < div > tiene posición: fija;</p>
+        <p>Aquí está el CSS que se utiliza:</p>
+    </div>
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="code-ex">
+        <code>
+            div.fixed { <br>
+                position: fixed; <br>
+                bottom: 0; <br>
+                right: 0; <br>
+                width: 300px; <br>
+                border: 3px solid #73AD21; <br>
+              }
+        </code>
+    </div>
+    </div>
+
+    <hr>
+
+    <div class="desc">
+        <h2>position: relative;</h2>
+        <p>Un elemento con <span class="imp">position: relative;</span> se coloca en relación con su posición normal.</p>
+        <p>Establecer las propiedades superior, derecha, inferior e izquierda de un elemento en posición relativa hará que se ajuste fuera de su posición normal. 
+            El resto del contenido no se ajustará para encajar en ningún espacio dejado por el elemento.</p>
+        <p style="position: relative; left: 30px; border: 3px solid #73AD21;">Este elemento < div > tiene posición: relativa;</p>
+        <p>Aquí está el CSS que se utiliza:</p>
+    </div>
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="code-ex">
+        <code>
+            div.relative { <br>
+                position: relative; <br>
+                left: 30px; <br>
+                border: 3px solid #73AD21; <br>
+              } 
+        </code>
+    </div>
+    </div>
+
+    <hr>
+
+    <div class="desc">
+        <h2>position: absolute;</h2>
+        <p>Un elemento con <span class="imp">position: absolute;</span> se posiciona en relación con el ancestro posicionado más cercano 
+            (en lugar de posicionarse en relación con la ventana gráfica, como fijo).</p>
+        <p>Sin embargo; Si un elemento de posición absoluta no tiene antepasados ​​posicionados, 
+            utiliza el cuerpo del documento y se mueve junto con el desplazamiento de la página.</p>
+        <p><span style="font-weight: bold;">Nota:</span> Los elementos posicionados de forma absoluta se eliminan del flujo normal y pueden superponerse a elementos.</p>
+        <p>Aquí hay un ejemplo simple:</p>
+        <p style="position: relative; width: 400px;height: 200px; border: 3px solid #73AD21;">
+            Este elemento < div > tiene posición: relativa;</p>
+    </div>
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="code-ex">
+        <code>
+            div.relative { <br>
+                position: relative; <br>
+                width: 400px; <br>
+                height: 200px; <br>
+                border: 3px solid #73AD21; <br>
+            } <br> <br>
+            div.absolute { <br>
+                position: absolute; <br>
+                top: 80px; <br>
+                right: 0; <br>
+                width: 200px; <br>
+                height: 100px; <br>
+                border: 3px solid #73AD21; <br>
+            }
+        </code>
+    </div>
+    </div>
+
+    <hr>
+
+    <div class="desc">
+        <h2>position: sticky;</h2>
+        <p>Un elemento con <span class="imp">position: sticky;</span> se posiciona según la posición de desplazamiento del usuario.</p>
+        <p>Un elemento adhesivo alterna entre <span class="imp">relative</span> y <span class="imp">fixed</span>, según la posición de desplazamiento. Se coloca en relación hasta que
+             se alcanza una posición de desplazamiento determinada en la ventana gráfica; luego se "pega" en su lugar (como posición: fija).</p>
+    </div>
+    
+    <div class="note">
+        <p><span style="font-weight: bold;">Nota: </span>Internet Explorer no admite el posicionamiento fijo. Safari requiere un prefijo -webkit- (ver ejemplo a continuación). 
+            También debe especificar al menos uno de <span class="imp">top</span>, <span class="imp">right</span> o para <span class="imp">bottom</span> que <span class="imp">left</span> funcione la posición fija.</p>
+    </div>
+
+    <iframe src="iframe.html" frameborder="1">
+        
+    </iframe>
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="code-ex">
+        <code>
+            div.sticky { <br>
+                position: -webkit-sticky; /* Safari */ <br>
+                position: sticky; <br>
+                top: 0; <br>
+                background-color: green; <br>
+                border: 2px solid #4CAF50; <br>
+              } 
+        </code>
+    </div>
+    </div>
+
+    <div class="desc">
+        <h2>Todas las propiedades de posicionamiento CSS</h2>
+    <table>
+        <tr class="columnas">
+            <th>Propiedad</th>
+            <th>Descripción</th>
+        </tr>
+        <tr class="tr-gray">
+            <td class="fst">bottom</td>
+            <td>Establece el borde del margen inferior para un cuadro posicionado.</td>
+        </tr>
+        <tr>
+            <td>clip</td>
+            <td>Recorta un elemento absolutamente posicionado.</td>
+        </tr>
+        <tr class="tr-gray">
+            <td>left</td>
+            <td>Establece el borde del margen izquierdo para un cuadro posicionado.</td>
+        </tr>
+        <tr>
+            <td>position</td>
+            <td>Especifica el tipo de posicionamiento de un elemento.</td>
+        </tr>
+        <tr class="tr-gray">
+            <td>right</td>
+            <td>Establece el borde del margen derecho para un cuadro posicionado.</td>
+        </tr>
+        <tr>
+            <td>top</td>
+            <td>Establece el borde del margen superior para un cuadro posicionado.</td>
+        </tr>
+        </table>
+    </div>
+    <div class="btn-pasar"> 
+        <button class="back"><a href="display.html">Anterior</a></button>
+        <button class="next"><a href="zindex.html">Siguiente</a></button>
+    </div>
+
+    <hr style="clear: both;">
+    <footer>
+        <p>Edgar Álvaro Varela ©2024</p>
+    </footer>
+</div>
+</body>
+</html>

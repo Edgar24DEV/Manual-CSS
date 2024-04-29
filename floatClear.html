@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Manual CSS</title>
+</head>
+<body>
+    <header>MANUAL CSS</header>
+    <!-- Barra de navegación -->
+    <ul class="nav-bar">
+        <li class="nav-option"><a href="index.html">Home</a></li>
+        <li class="nav-option"><a href="display.html">Display</a></li>
+        <li class="nav-option "><a href="position.html">Position</a></li>
+        <li class="nav-option"><a href="zindex.html">Z-Index</a></li>
+        <li class="nav-option"><a href="overflow.html">Overflow</a></li>
+        <li class="nav-option dropdown selected"><a href="floatClear.html">Float and Clear</a>
+            <div class="dropdown-content">
+                <a class="selected" href="floatClear.html">Float</a>
+                <a href="clear.html">Clear</a>
+                <a href="floatex.html">Float examples</a>
+              </div>
+            </li>
+        <li class="nav-option"><a href="inlineBlock.html">Display: Inline-block</a></li>
+        <li class="nav-option dropdown"><a href="combinators.html">Others</a>
+            <div class="dropdown-content">
+                <a href="combinators.html">Combinators</a>
+                <a href="pseudoclass.html">Pseudo-classes</a>
+                <a href="elements.html">Pseudo-elements</a>
+              </div>
+            </li>
+    </ul>
+
+<div class="content">
+
+    <header id="Float">Diseño CSS : float and clear</header>
+
+    <hr>
+
+    <p>La propiedad CSS <span class="imp">float</span> especifica cómo debe flotar un elemento.</p>
+    <p>La propiedad CSS <span class="imp">clear</span> especifica qué elementos pueden flotar junto al elemento borrado y en qué lado.</p>
+
+    <div style="width: 100px;height: 50px; background-color: rgb(0, 153, 255); float: left; margin-bottom: 10px; text-align: center; padding: 25px 0 0; color: white;">Float left</div>
+    <div style="width: 100px;height: 50px; background-color: rgb(234, 81, 57); float: right; text-align: center; padding: 25px 0 0; color: white;">Float right</div>
+
+    <hr style="width: 100%;">
+
+    <div class="desc">
+    <h2>La propiedad Float</h2>
+    <p>La propiedad <span class="imp">float</span> se utiliza para posicionar y formatear contenido, por ejemplo, dejar que una imagen flote a la izquierda del texto en un contenedor.</p>
+    <p>La propiedad <span class="imp">float</span> puede tener uno de los siguientes valores:</p>
+    <ul>
+        <li><span class="imp">left</span>- El elemento flota a la izquierda de su contenedor.</li>
+        <li><span class="imp">right</span>- El elemento flota a la derecha de su contenedor.</li>
+        <li><span class="imp">none</span>- El elemento no flota (se mostrará justo donde aparece en el texto). Esto es predeterminado</li>
+        <li><span class="imp">inherit</span>- El elemento hereda el valor flotante de su padre.</li>
+    </ul>
+    <p>En su uso más simple, la propiedad <span class="imp">float</span> se puede utilizar para ajustar texto alrededor de imágenes.</p>
+    </div>
+
+    <hr>
+
+    <div class="desc">
+        <h2>Ejemplo: Float: right</h2>
+        <p>El siguiente ejemplo especifica que una imagen debe flotar hacia la derecha en un texto:</p>
+
+        <div style="border: 1px solid black; width: 80%; padding: 5px; margin-bottom: 15px; overflow: hidden; margin-left: 10%; margin-right: 10%;">
+            <p style="padding: 5px;"><img src="pictures/pineapple.jpg" alt="Pineapple" style="width:30%;margin-left:15px; float: right; margin-bottom: 15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egetas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac...</p>
+            
+        </div>
+
+    </div>
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="code-ex">
+        <code>
+            img { <br>
+                float: right; <br>
+              } 
+        </code>
+    </div>
+    </div>
+
+    <hr>
+
+    <div class="desc">
+        <h2>Ejemplo: Float: left</h2>
+        <p>El siguiente ejemplo especifica que una imagen debe flotar hacia la izquierda en un texto:</p>
+
+        <div style="border: 1px solid black; width: 80%; padding: 5px; margin-bottom: 15px; overflow: hidden; margin-left: 10%; margin-right: 10%;">
+            <p style="padding: 5px;"><img src="pictures/pineapple.jpg" alt="Pineapple" style="width:30%;margin-right:15px; float: left; margin-bottom: 15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egetas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac...</p>
+            
+        </div>
+
+    </div>
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="code-ex">
+        <code>
+            img { <br>
+                float: left; <br>
+              } 
+        </code>
+    </div>
+    </div>
+
+    <hr>
+
+    <div class="desc">
+        <h2>Ejemplo: Sin float</h2>
+        <p>En el siguiente ejemplo, la imagen se mostrará justo donde aparece en el texto (flotante: ninguno;):</p>
+
+        <div style="border: 1px solid black; width: 80%; padding: 5px; margin-bottom: 15px; overflow: hidden; margin-left: 10%; margin-right: 10%;">
+            <p style="padding: 5px;"><img src="pictures/pineapple.jpg" alt="Pineapple" style="width:30%;margin-left:15px; float: none; margin-bottom: 15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egetas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac...</p>
+            
+        </div>
+
+    </div>
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="code-ex">
+        <code>
+            img { <br>
+                float: none; <br>
+              } 
+        </code>
+    </div>
+    </div>
+
+    <div class="btn-pasar"> 
+        <button class="back"><a href="overflow.html">Anterior</a></button>
+        <button class="next"><a href="clear.html">Siguiente</a></button>
+    </div>
+
+    <hr style="clear: both;">
+    <footer>
+        <p>Edgar Álvaro Varela ©2024</p>
+    </footer>
+</div>
+</body>
+</html>

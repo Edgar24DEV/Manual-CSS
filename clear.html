@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Manual CSS</title>
+</head>
+<body>
+    <header>MANUAL CSS</header>
+    <!-- Barra de navegación -->
+    <ul class="nav-bar">
+        <li class="nav-option"><a href="index.html">Home</a></li>
+        <li class="nav-option"><a href="display.html">Display</a></li>
+        <li class="nav-option "><a href="position.html">Position</a></li>
+        <li class="nav-option"><a href="zindex.html">Z-Index</a></li>
+        <li class="nav-option"><a href="overflow.html">Overflow</a></li>
+        <li class="nav-option dropdown selected"><a href="floatClear.html">Float and Clear</a>
+            <div class="dropdown-content">
+                <a href="floatClear.html">Float</a>
+                <a class="selected" href="clear.html">Clear</a>
+                <a href="floatex.html">Float examples</a>
+              </div>
+            </li>
+        <li class="nav-option"><a href="inlineBlock.html">Display: Inline-block</a></li>
+        <li class="nav-option dropdown"><a href="combinators.html">Others</a>
+            <div class="dropdown-content">
+                <a href="combinators.html">Combinators</a>
+                <a href="pseudoclass.html">Pseudo-classes</a>
+                <a href="elements.html">Pseudo-elements</a>
+              </div>
+            </li>
+    </ul>
+
+<div class="content">
+
+    <header id="Float">Diseño CSS : clear y clearfix</header>
+
+    <hr>
+
+    <div class="desc">
+    <h2>La propiedad Clear</h2>
+    <p>Cuando usamos la propiedad <span class="imp">float</span> y queremos el siguiente elemento debajo (no a la derecha ni a la izquierda), tendremos que usar la propiedad <span class="imp">clear</span>.</p>
+    <p>La propiedad <span class="imp">clear</span> especifica qué debe suceder con el elemento que está al lado de un elemento flotante.</p>
+    <p>La propiedad <span class="imp">clear</span> puede tener uno de los siguientes valores:</p>
+    <ul>
+        <li><span class="imp">none</span>- El elemento no se empuja debajo de los elementos flotantes izquierdo o derecho. Esto es predeterminado.</li>
+        <li><span class="imp">left</span>- El elemento se empuja debajo de los elementos flotantes a la izquierda.</li>
+        <li><span class="imp">right</span>- El elemento se empuja debajo de los elementos flotantes derechos.</li>
+        <li><span class="imp">both</span>- El elemento se empuja debajo de los elementos flotantes izquierdo y derecho.</li>
+        <li><span class="imp">inherit</span>- El elemento hereda el valor claro de su padre.</li>
+    </ul>
+    <p>Al borrar los flotadores, debes hacer coincidir el claro con el flotante: si un elemento flota hacia la izquierda, entonces debes borrar hacia la izquierda. Su elemento flotante seguirá flotando, pero el elemento borrado aparecerá debajo de él en la página web.</p>
+    </div>
+
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <p>Este ejemplo borra el flotador a la izquierda. Aquí, significa que el elemento &lt;div2&gt; se coloca debajo del elemento &lt;div1&gt; flotante izquierdo: </p>
+        <div class="code-ex">
+        <code>
+            div1 { <br>
+                float: left; <br>
+              } <br>
+            div2 { <br>
+                clear: left; <br>
+              } 
+        </code>
+    </div>
+    </div>
+
+    <hr>
+
+    <div class="desc">
+        <h2>El truco clearfix</h2>
+        <p>Si un elemento flotante es más alto que el elemento contenedor, se "desbordará" fuera de su contenedor. Luego podemos agregar un truco clearfix para resolver este problema:</p>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr;">
+        <div style="border: 1px solid #4CAF50; width: 80%; height: 280px; padding: 5px; margin-bottom: 15px; margin-left: 10%; margin-right: 10%;">
+            <h3>Sin clearfix</h3>
+            <img src="pictures/pineapple.jpg" alt="Pineapple" style="width:35%;margin-left:15px; float: right; margin-bottom: 15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egetas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac...
+            
+        </div>
+        <div style="border: 1px solid #4CAF50; width: 80%; padding: 5px; margin-bottom: 15px; margin-left: 10%; margin-right: 10%; overflow: auto;">
+            <h3>Con clearfix</h3>
+            <img src="pictures/pineapple.jpg" alt="Pineapple" style="width:35%;margin-left:15px; float: right; margin-bottom: 15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egetas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac...
+            
+        </div>
+        </div>
+
+    </div>
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="code-ex">
+        <code>
+            .clearfix { <br>
+                overflow: auto; <br>
+              } 
+        </code>
+    </div>
+    </div>
+
+    <div class="btn-pasar"> 
+        <button class="back"><a href="floatClear.html">Anterior</a></button>
+        <button class="next"><a href="floatex.html">Siguiente</a></button>
+    </div>
+
+    <hr style="clear: both;">
+    <footer>
+        <p>Edgar Álvaro Varela ©2024</p>
+    </footer>
+</div>
+</body>
+</html>

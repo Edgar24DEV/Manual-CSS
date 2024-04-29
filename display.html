@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Display</title>
+</head>
+<body>
+    <header>MANUAL CSS</header>
+    <!-- Barra de navegación -->
+    <ul class="nav-bar">
+        <li class="nav-option"><a href="index.html">Home</a></li>
+        <li class="nav-option selected"><a href="display.html">Display</a></li>
+        <li class="nav-option"><a href="position.html">Position</a></li>
+        <li class="nav-option"><a href="zindex.html">Z-Index</a></li>
+        <li class="nav-option"><a href="overflow.html">Overflow</a></li>
+        <li class="nav-option dropdown"><a href="floatClear.html">Float and Clear</a>
+            <div class="dropdown-content">
+                <a href="floatClear.html">Float</a>
+                <a href="clear.html">Clear</a>
+                <a href="floatex.html">Float examples</a>
+              </div>
+            </li>
+        <li class="nav-option"><a href="inlineBlock.html">Display: Inline-block</a></li>
+        <li class="nav-option dropdown"><a href="combinators.html">Others</a>
+            <div class="dropdown-content">
+                <a href="combinators.html">Combinators</a>
+                <a href="pseudoclass.html">Pseudo-classes</a>
+                <a href="elements.html">Pseudo-elements</a>
+              </div>
+            </li>
+    </ul>
+
+    <div class="content">
+
+    <header>Diseño CSS : la propiedad de visualización</header>
+
+    <hr>
+
+    <p>La propiedad <span class="imp">display</span> es la propiedad CSS más importante para controlar el diseño.</p>
+
+    <hr>
+
+    <div class="desc">
+        <h2>La propiedad de visualización</h2>
+        <p>La propiedad <span class="imp">display</span> se utiliza para especificar cómo se muestra un elemento en una página web.</p>
+        <p>Cada elemento HTML tiene un valor de visualización predeterminado, según el tipo de elemento que sea.
+            El valor de visualización predeterminado para la mayoría de los elementos es <span class="imp">block</span> o <span class="imp">inline</span>.</p>
+        <p>La propiedad <span class="imp">display</span> se utiliza para cambiar el comportamiento de visualización predeterminado de los elementos HTML.</p>
+        </div>
+        <hr>
+
+        <div class="desc">
+            <h2>Elementos a nivel de bloque</h2>
+            <p>Un elemento a nivel de bloque SIEMPRE comienza en una nueva línea y ocupa todo el ancho disponible
+                (se extiende hacia la izquierda y hacia la derecha tanto como puede).</p>
+            <p>El elemento < div > es un elemento a nivel de bloque.</p>
+            <p>Ejemplos de elementos a nivel de bloque:</p>
+            <ul>
+                <li>&lt;div&gt;</li>
+                <li>&lt;h1&gt; - &lt;h6&gt;</li>
+                <li>&lt;p&gt;</li>
+                <li>&lt;form&gt;</li>
+                <li>&lt;header&gt;</li>
+                <li>&lt;footer&gt;</li>
+                <li>&lt;section&gt;</li>
+            </ul>
+            </div>
+
+            <div class="desc">
+                <h2>Elementos en linea</h2>
+                <p>Un elemento en línea NO comienza en una nueva línea y solo ocupa el ancho necesario.</p>
+                <p>Este es <span style="border-color: green; border-width: 2px; border-style: solid;">un elemento < span > en línea dentro</span> de un párrafo.</p>
+                <p>Ejemplos de elementos en línea:</p>
+                <ul>
+                    <li>&lt;span&gt;</li>
+                    <li>&lt;a&gt;</li>
+                    <li>&lt;img&gt;</li>
+                </ul>
+                </div>
+
+                <div class="desc">
+                    <h2>Los valores de propiedad de visualización</h2>
+                    <p>La propiedad <span class="imp">display</span> tiene muchos valores:</p>
+
+                    <table>
+                    <tr class="columnas">
+                        <th>Valor</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr class="tr-gray">
+                        <td class="fst">block</td>
+                        <td>El elemento se muestra como un bloque.</td>
+                    </tr>
+                    <tr>
+                        <td>inline</td>
+                        <td>Hace que el contenedor desaparezca, haciendo que los elementos secundarios sean hijos del elemento en el siguiente nivel en el DOM.
+                        </td>
+                    </tr>
+                    <tr class="tr-gray">
+                        <td>contents</td>
+                        <td>Muestra un elemento como un contenedor flexible a nivel de bloque</td>
+                    </tr>
+                    <tr>
+                        <td>flex</td>
+                        <td>Muestra un elemento como un contenedor flexible a nivel de bloque</td>
+                    </tr>
+                    <tr class="tr-gray">
+                        <td>grid</td>
+                        <td>Muestra un elemento como un contenedor de cuadrícula a nivel de bloque</td>
+                    </tr>
+                    <tr>
+                        <td>inline-block</td>
+                        <td>Muestra un elemento como un contenedor de bloques de nivel en línea. El elemento en sí tiene el formato de elemento en línea, pero puede aplicar valores de alto y ancho.</td>
+                    </tr>
+                    <tr class="tr-gray">
+                        <td>inline-flex</td>
+                        <td>Muestra un elemento como un contenedor flexible de nivel en línea.</td>
+                    </tr>
+                    <tr>
+                        <td>inline-grid</td>
+                        <td>Muestra un elemento como un contenedor de cuadrícula de nivel en línea.</td>
+                    </tr>
+                    <tr class="tr-gray">
+                        <td>inline-table</td>
+                        <td>El elemento se muestra como una tabla de nivel en línea.</td>
+                    </tr>
+                    <tr>
+                        <td>list-item</td>
+                        <td>Deja que el elemento se comporte como un elemento < li >.</td>
+                    </tr>
+                    <tr class="tr-gray">
+                        <td>run-in</td>
+                        <td>Muestra un elemento como bloque o en línea, según el contexto.</td>
+                    </tr>
+                    <tr>
+                        <td>table</td>
+                        <td>Deje que el elemento se comporte como un elemento < table >.</td>
+                    </tr>
+                    <tr class="tr-gray">
+                        <td>table-caption</td>
+                        <td>Deje que el elemento se comporte como un elemento < caption >.</td>
+                    </tr>
+                    <tr>
+                        <td>table-column-group</td>
+                        <td>Deje que el elemento se comporte como un elemento < colgroup >.</td>
+                    </tr>
+                    <tr class="tr-gray">
+                        <td>table-header-group</td>
+                        <td>Deja que el elemento se comporte como un elemento < thead >.</td>
+                    </tr>
+                    <tr>
+                        <td>table-footer-group</td>
+                        <td>Deja que el elemento se comporte como un elemento < tfoot >.</td>
+                    </tr>
+                    <tr class="tr-gray">
+                        <td>table-row-group</td>
+                        <td>Deja que el elemento se comporte como un elemento < tbody >.</td>
+                    </tr>
+                    <tr>
+                        <td>table-cell</td>
+                        <td>
+                            Deja que el elemento se comporte como un elemento < td >.
+                        </td>
+                    </tr>
+                    <tr class="tr-gray">
+                        <td>table-column</td>
+                        <td>Deja que el elemento se comporte como un elemento < col >.</td>
+                    </tr>
+                    <tr>
+                        <td>table-row</td>
+                        <td>Deja que el elemento se comporte como un elemento < tr >.</td>
+                    </tr>
+                    <tr class="tr-gray">
+                        <td>none</td>
+                        <td>El elemento se elimina por completo.</td>
+                    </tr>
+                    <tr>
+                        <td>initial</td>
+                        <td>Establece esta propiedad a su valor predeterminado.</td>
+                    </tr>
+                    <tr class="tr-gray">
+                        <td>inherit</td>
+                        <td>Hereda esta propiedad de su elemento padre.</td>
+                    </tr>
+                    </table>
+                    </div>
+
+                    <div class="btn-pasar">
+                        <button class="back"><a href="index.html">Anterior</a></button>
+                        <button class="next"><a href="position.html">Siguiente</a></button>
+                    </div>
+
+                    <hr style="clear: both;">
+                    <footer>
+                        <p>Edgar Álvaro Varela ©2024</p>
+                    </footer>
+</div>
+</body>
+</html>

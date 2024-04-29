@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Manual CSS</title>
+</head>
+<body>
+    <header>MANUAL CSS</header>
+    <!-- Barra de navegación -->
+    <ul class="nav-bar">
+        <li class="nav-option"><a href="index.html">Home</a></li>
+        <li class="nav-option"><a href="display.html">Display</a></li>
+        <li class="nav-option"><a href="position.html">Position</a></li>
+        <li class="nav-option"><a href="zindex.html">Z-Index</a></li>
+        <li class="nav-option"><a href="overflow.html">Overflow</a></li>
+        <li class="nav-option dropdown"><a href="floatClear.html">Float and Clear</a>
+            <div class="dropdown-content">
+                <a href="floatClear.html">Float</a>
+                <a href="clear.html">Clear</a>
+                <a href="floatex.html">Float examples</a>
+              </div>
+            </li>
+        <li class="nav-option"><a href="inlineBlock.html">Display: Inline-block</a></li>
+        <li class="nav-option dropdown selected"><a href="combinators.html">Others</a>
+            <div class="dropdown-content">
+                <a href="combinators.html">Combinators</a>
+                <a href="pseudoclass.html">Pseudo-classes</a>
+                <a class="selected" href="elements.html">Pseudo-elements</a>
+              </div>
+            </li>
+    </ul>
+
+<div class="content">
+
+    <header>Pseudoelementos CSS</header>
+
+    <hr>
+    
+    <div class="desc">
+    <h2>¿Qué son los pseudoelementos?</h2>
+    <p>Un pseudoelemento CSS se utiliza para diseñar partes específicas de un elemento.</p>
+    <p>Por ejemplo, se puede utilizar para:</p>
+    <ul>
+        <li>Aplicar estilo a la primera letra o línea de un elemento</li>
+        <li>Insertar contenido antes o después del contenido de un elemento</li>
+    </ul>
+    </div>
+    
+    <hr>
+
+    <h2>Sintaxis</h2>
+    <p>La sintaxis de pseudoelementos:</p>
+
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="code-ex">
+        <code>
+            selector::pseudo-element { <br>
+                property: value; <br>
+              }
+        </code>
+    </div>
+    </div>
+
+    <hr>
+
+    <h2>El pseudoelemento :: de primera línea</h2>
+
+    <p>El pseudoelemento <span class="imp">::first-line</span> se utiliza para agregar un estilo especial a la primera línea de un texto.</p>
+    <p>El siguiente ejemplo da formato a la primera línea del texto en todos los elementos &lt;p&gt;:</p>
+
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="code-ex">
+        <code>
+            p::first-line { <br>
+                color: #ff0000; <br>
+                font-variant: small-caps; <br>
+              }
+        </code>
+    </div>
+    </div>
+
+    <p><span style="font-weight: bold;">Nota:</span> El pseudoelemento <span class="imp">::first-line</span> solo se puede aplicar a elementos a nivel de bloque.</p>
+    <p>Las siguientes propiedades se aplican al pseudoelemento <span class="imp">::first-line</span>:</p>
+
+    <ul>
+        <li>propiedades de fuente</li>
+        <li>propiedades de color</li>
+        <li>propiedades de fondo</li>
+        <li>espaciado de palabras</li>
+        <li>espaciado de letras</li>
+        <li>decoracion-de-texto</li>
+        <li>alineación vertical</li>
+        <li>transformación de texto</li>
+        <li>altura de la línea</li>
+        <li>clear</li>
+    </ul>
+
+    <div class="note" style="font-size: 18px;"><span style="font-weight: bold;">Observe la notación de dos puntos dobles -</span> <span class="imp">::first-line</span> versus <span class="imp">:first-line</span>
+    <p>Los dos puntos dobles reemplazaron la notación de dos puntos simples para pseudoelementos en CSS3. Este fue un intento del W3C de distinguir entre pseudoclases y pseudoelementos .</p>
+    <p>La sintaxis de dos puntos se utilizó tanto para pseudoclases como para pseudoelementos en CSS2 y CSS1.</p>
+    <p>Para compatibilidad con versiones anteriores, la sintaxis de dos puntos es aceptable para los pseudoelementos CSS2 y CSS1.</p>
+    </div>
+
+    <hr>
+
+    <h2>El pseudoelemento ::primera letra</h2>
+
+    <p>El pseudoelemento <span class="imp">::first-letter</span> se utiliza para agregar un estilo especial a la primera letra de un texto.</p>
+    <p>El siguiente ejemplo da formato a la primera letra del texto en todos los elementos &lt;p&gt;: </p>
+    
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="code-ex">
+        <code>
+            p::first-letter { <br>
+                color: #ff0000; <br>
+                font-size: xx-large; <br>
+              }
+        </code>
+    </div>
+    </div>
+
+    <p><span style="font-weight: bold;">Nota:</span>  El pseudoelemento <span class="imp">::first-letter</span> solo se puede aplicar a elementos a nivel de bloque.</p>
+    <p>Las siguientes propiedades se aplican al pseudoelemento ::first-letter: </p>
+
+    <ul>
+        <li>propiedades de fuente</li>
+        <li>propiedades de color</li>
+        <li>propiedades de fondo</li>
+        <li>propiedades de margen</li>
+        <li>propiedades de relleno</li>
+        <li>propiedades de borde</li>
+        <li>decoracion-de-texto</li>
+        <li>alineación vertical (solo si "flotante" es "ninguno")</li>
+        <li>transformación de texto</li>
+        <li>altura de la línea</li>
+        <li>float</li>
+        <li>clear</li>
+    </ul>
+
+    <hr>
+
+    <h2>Pseudoelementos y clases HTML</h2>
+
+    <p>Los pseudoelementos se pueden combinar con clases HTML:</p>
+
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="code-ex">
+        <code>
+            p.intro::first-letter { <br>
+                color: #ff0000; <br>
+                font-size: 200%; <br>
+              }
+        </code>
+    </div>
+    </div>
+
+    <p>El ejemplo anterior mostrará la primera letra de los párrafos con clase="intro", en rojo y en un tamaño mayor.</p>
+
+    <hr>
+
+    <h2>Múltiples pseudoelementos</h2>
+
+    <p>También se pueden combinar varios pseudoelementos.</p>
+    <p>En el siguiente ejemplo, la primera letra de un párrafo será roja y tendrá un tamaño de fuente xx-grande. El resto de la primera línea será azul y en minúsculas. El resto del párrafo tendrá el tamaño y color de fuente predeterminados:</p>
+    
+
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="code-ex">
+        <code>
+            p::first-letter { <br>
+                color: #ff0000; <br>
+                font-size: xx-large; <br>
+              } <br>
+              <br>
+              p::first-line { <br>
+                color: #0000ff; <br>
+                font-variant: small-caps; <br>
+              }
+        </code>
+    </div>
+    </div>
+
+    <hr>
+
+    <h2>CSS: el pseudoelemento ::before</h2>
+
+    <p>El pseudoelemento <span class="imp">::before</span> se puede utilizar para insertar algún contenido antes del contenido de un elemento.</p>
+
+    <p>El siguiente ejemplo inserta una imagen antes del contenido de cada elemento &lt;h1&gt;:</p>
+    
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="code-ex">
+        <code>
+            h1::before { <br>
+                content: url(smiley.gif); <br>
+              }
+        </code>
+    </div>
+    </div>
+
+    <hr>
+
+    <h2>CSS: el pseudoelemento ::after</h2>
+
+    <p>El pseudoelemento <span class="imp">::after</span> se puede utilizar para insertar algún contenido después del contenido de un elemento.</p>
+    <p>El siguiente ejemplo inserta una imagen después del contenido de cada elemento &lt;h1&gt;:</p>
+        
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="code-ex">
+        <code>
+            h1::after { <br>
+                content: url(smiley.gif); <br>
+              }
+        </code>
+    </div>
+    </div>
+
+    <hr>
+
+    <h2>CSS: el pseudoelemento ::marker</h2>
+
+    <p>El pseudoelemento <span class="imp">::marker</span> selecciona los marcadores de los elementos de la lista.</p>
+    <p>El siguiente ejemplo aplica estilo a los marcadores de los elementos de la lista:</p>
+
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="code-ex">
+        <code>
+            ::marker { <br>
+                color: red; <br>
+                font-size: 23px; <br>
+                }
+        </code>
+    </div>
+    </div>
+
+    <hr>
+
+    <h2>CSS: el pseudoelemento ::selection</h2>
+
+    <p>El pseudoelemento <span class="imp">::selection</span> coincide con la parte de un elemento seleccionada por un usuario.</p>
+    <p>Las siguientes propiedades CSS se pueden aplicar a <span class="imp">::selection</span>: <span class="imp">color</span>, <span class="imp">background</span>, <span class="imp">cursor</span> y <span class="imp">outline</span>.</p>    
+    <p>El siguiente ejemplo hace que el texto seleccionado sea rojo sobre un fondo amarillo:</p>
+    
+    <p class="select">Selecciona AQUÍ</p>
+    <div class="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="code-ex">
+        <code>
+            ::selection { <br>
+                color: red; <br>
+                background: yellow; <br>
+              }
+        </code>
+    </div>
+    </div>
+
+    <div class="desc">
+        <h2>Todas las pseudoclases de CSS</h2>
+    <table>
+        <tr class="columnas">
+            <th>Propiedad</th>
+            <th>Ejemplo</th>
+            <th>Descripción</th>
+        </tr>
+        <tr class="tr-gray">
+            <td class="fst">::after</td>
+            <td>p::after</td>
+            <td>Inserta algo después del contenido de cada elemento &lt;p&gt;.</td>
+        </tr>
+        <tr>
+            <td>::before</td>
+            <td>p::before</td>
+            <td>Inserta algo antes del contenido de cada elemento &lt;p&gt;.</td>
+        </tr>
+        <tr class="tr-gray">
+            <td>::first-letter</td>
+            <td>p::first-letter</td>
+            <td>Selecciona la primera letra de cada elemento &lt;p&gt;.</td>
+        </tr>
+        <tr>
+            <td>::first-line</td>
+            <td>p::first-line</td>
+            <td>Selecciona la primera línea de cada elemento &lt;p&gt;.</td>
+        </tr>
+        <tr class="tr-gray">
+            <td>::marker</td>
+            <td>::marker</td>
+            <td>Selecciona los marcadores de los elementos de lista.</td>
+        </tr>
+        <tr>
+            <td>::selection</td>
+            <td>p::selection	</td>
+            <td>Selecciona la porción de un elemento que está seleccionada por el usuario.</td>
+        </tr>
+        </table>
+    </div>
+
+    <div class="btn-pasar">
+        <button class="back"><a href="pseudoclass.html">Anterior</a></button>
+        <button class="next"><a href="index.html">Inicio</a></button>
+    </div>
+
+    <hr style="clear: both;">
+    <footer>
+        <p>Edgar Álvaro Varela ©2024</p>
+    </footer>
+</div>
+</body>
+</html>
